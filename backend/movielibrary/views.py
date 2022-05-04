@@ -1,14 +1,12 @@
-from urllib import response
-from django.shortcuts import render
 from backend.movielibrary import serializers
-
+from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.decorators import api_view, permission_classes
 from backend.movielibrary.models import Movie
-from rest_framework.views import APIView
 from rest_framework.response import Response
 
-# Create your views here.
-class MovieList(APIView):
-    def get(self, request);
-        movie = Movie.objects.all()
-        serializer = serializers.MovieSerializer(movie, many=True)
-        return Response(serializer.data)
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def get_movies(request):
+    movies = Movie.objects.all()
+    serializer = serializers.MovieSerializer(movies, many=True)
+    return Response(serializer.data)
