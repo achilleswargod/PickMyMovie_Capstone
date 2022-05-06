@@ -1,18 +1,15 @@
-import MovieList from "../../pages/MovieListPage/MovieListPage";
+import React from "react";
 
 const DisplayMovieList = (props) => {
-  return props.movies.map((movie, index) => {
-    return (
-      <div className="mappedMovieList">
-        <table>
-          <thead>
-            <th>{movie.title}</th>
-            <tbody>
-              <tr key={index}></tr>
-            </tbody>
-          </thead>
-        </table>
-      </div>
-    );
-  });
+  return (
+    <tr>
+      <td>props.movie.Title</td>
+      <td>props.movie.Year</td>
+      <td>props.movie.Rated</td>
+      <td>props.movie.Genre</td>
+      <td>props.movie.Actors</td>
+      <td>props.movie.Poster</td>
+    </tr>
+  );
 };
+export default DisplayMovieList;
