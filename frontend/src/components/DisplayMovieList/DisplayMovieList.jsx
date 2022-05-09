@@ -1,9 +1,10 @@
 import React from "react";
+import MovieListPage from "../../pages/MovieListPage/MovieListPage";
 
 const DisplayMovieList = (props) => {
   return (
     <tr>
-      <td>props.movie.Title</td>
+      <td>{props.movie.Title}</td>
       <td>props.movie.Year</td>
       <td>props.movie.Rated</td>
       <td>props.movie.Genre</td>

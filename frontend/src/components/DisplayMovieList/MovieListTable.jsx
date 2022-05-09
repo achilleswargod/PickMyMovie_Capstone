@@ -5,7 +5,7 @@ const MovieTable = (props) => {
     <table className="table">
       <thead>
         <tr>
-          <th>Title</th>
+          <th>{props.Title}</th>
           <th>Year</th>
           <th>Rated</th>
           <th>Genre</th>

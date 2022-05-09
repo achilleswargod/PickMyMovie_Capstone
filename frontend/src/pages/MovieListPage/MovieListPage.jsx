@@ -8,32 +8,21 @@ function MovieListPage(props) {
   const [searchValue, setSearchValue] = useState("");
   //   const [formData, handleInputChange, handleSubmit] = useState([]);
 
-  let token = "909cfcfe";
-  async function fetchMoviesByTitle() {
+  async function getMoviesByTitle() {
     try {
       let response = await axios.get(
-        `http://www.omdbapi.com/?apikey=${token}&t=terminator`
+        `http://www.omdbapi.com/?apikey=909cfcfe&t=terminator`
       );
-      console.log("Movies fetched: ", response.data);
-      setMovies(response.data);
+      console.log("Movies: ", response.data);
+      setMovies(response.data.results);
     } catch (error) {
       console.log(error);
     }
   }
 
-  function mapMovies() {
-    console.log("map movies");
-    return movies.map((movie) => (
-      <DisplayMovieList key={movie.title} movie={movie} />
-    ));
-  }
 
   useEffect(() => {
-    let mounted = true;
-    if (mounted) {
-      fetchMoviesByTitle();
-    }
-    return () => (mounted = false);
+    getMoviesByTitle()
   }, []);
 
   return (
