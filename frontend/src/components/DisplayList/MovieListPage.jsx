@@ -1,7 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import DisplayMovieList from "./DisplayMovieList";
-
+import MovieListHeader from "./MovieHeader"
+import "bootstrap/dist/css/bootstrap.min.css";
+import './MovieListPage.css';
 
 function MovieListPage() {
   const [movies, setMovies] = useState([]);
@@ -23,8 +25,13 @@ function MovieListPage() {
   }, []);
 
   return (
-    <div className="movieListContainer">
+    <div className='container-fluid movie-app'>
+      <div className='row'>
+      <MovieListHeader heading='Movies' />
+      </div>
+      <div className='row'>
       <DisplayMovieList movies={movies} />
+      </div>
     </div>
   );
 }
