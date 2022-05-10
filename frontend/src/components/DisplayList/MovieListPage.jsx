@@ -8,14 +8,14 @@ function MovieListPage() {
  
   
   const getMovieRequest = async () => {
-		const url = `http://www.omdbapi.com/?s=star wars&apikey=909cfcfe`;
+		try {
+      let response = await axios.get( `http://www.omdbapi.com/?s=star wars&apikey=909cfcfe`);
+      console.log("Movie Search: ", response.data);
 
-		const response = await fetch(url);
-		const responseJson = await response.json();
-
-		if (responseJson.Search) {
-			setMovies(responseJson.Search);
-		}
+      setMovies(response.data.Search)
+		} catch(error){
+      console.log(error);
+    }
 	};
 
   useEffect(() => {
