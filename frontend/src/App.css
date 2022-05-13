@@ -35,7 +35,7 @@ button:hover {
 
 .container {
   margin: 0 auto;
-  max-width: 600px;
+  max-width: fit-content;
   overflow: auto;
   text-align: center;
 }

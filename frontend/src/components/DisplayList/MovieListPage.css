@@ -3,7 +3,29 @@ body {
     color: #ffffff;
 }
 
-.movie-app>.row {
-    overflow-x: auto;
-    flex-wrap: nowrap;
+.row {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: grid;
+    gap: 15px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.movie-cover {
+    width: 100%;
+}
+
+.hero {
+    min-height: 400px;
+    background-position: top-center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.container-movie-app {
+    margin-left: 1rem;
+
 }
