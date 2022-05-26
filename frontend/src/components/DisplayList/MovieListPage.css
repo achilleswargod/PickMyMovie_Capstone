@@ -16,16 +16,40 @@ body {
 .movie-cover {
     width: 100%;
 }
+.movie-placeholder{
+    min-height: 350px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .hero {
     min-height: 400px;
     background-position: top-center;
     background-size: cover;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
+  
+}
+.hero-content{
+    max-width: 80%;
+    padding-bottom: 60px;
 }
 
 .container-movie-app {
     margin-left: 1rem;
+}
 
+.hero-movie-title{
+    font-size: 72px;
+    margin: 0;
+}
+
+.button{
+    background-color: #0F1014;
+    color:white;
+    border: 1px solid white;
+    padding: 10px 15px;
+    cursor:pointer;
 }
